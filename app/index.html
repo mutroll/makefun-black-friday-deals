@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plunge — Black Friday 2026 Deal Finder</title>
+<meta name="description" content="Real Black Friday and Cyber Monday deals, each price-checked at the store on 27 November 2026. Search and filter by category, store and discount.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d63c0e'/%3E%3Cpath d='M8 22 L16 9 L24 22' stroke='%23fff' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <h1 class="brand">Plunge<em>.</em></h1>
+    <p class="tagline">Black Friday 2026 deal finder — real prices, checked today.</p>
+  </div>
+  <div class="wrap stats">
+    <span class="stat"><b id="stat-deals">–</b>deals checked</span>
+    <span class="stat"><b id="stat-lows">–</b>new lows</span>
+    <span class="stat"><b id="stat-best">–</b>biggest discount</span>
+    <span class="stat">Checked <b id="stat-checked">–</b></span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <div class="field field-grow">
+      <label for="search">Search deals</label>
+      <input id="search" type="search" placeholder="Try “OLED”, “AirPods”, “MacBook”…">
+    </div>
+    <div class="field">
+      <label for="category">Category</label>
+      <select id="category"></select>
+    </div>
+    <div class="field">
+      <label for="store">Store</label>
+      <select id="store"></select>
+    </div>
+    <div class="field">
+      <label for="min-discount">Min. discount</label>
+      <select id="min-discount">
+        <option value="0">Any discount</option>
+        <option value="20">20% off or more</option>
+        <option value="30">30% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="sort">Sort by</label>
+      <select id="sort">
+        <option value="discount">Biggest discount</option>
+        <option value="saving">Biggest saving ($)</option>
+        <option value="newlow">New lows first</option>
+        <option value="price">Lowest price first</option>
+      </select>
+    </div>
+    <label class="check"><input id="new-lows" type="checkbox"> New lows only</label>
+    <button class="btn" id="clear-filters" type="button">Clear filters</button>
+  </div>
+  <div class="wrap">
+    <p class="count-line"><span id="result-count"></span><span id="filter-summary"></span></p>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="deals" id="deals"></div>
+
+  <section class="compare-sec" aria-label="Same product at more than one store">
+    <h2>Same product, compared across stores</h2>
+    <p class="section-note">Where we found the same product at two stores, here is the honest comparison — same price, or what the extra money buys.</p>
+    <div id="compare"></div>
+  </section>
+
+  <section class="how-sec" aria-label="How these deals were checked">
+    <h2>How to read a deal here</h2>
+    <ul>
+      <li><b>NEW LOW</b> — the lowest price we have seen for this product. <b>STRONG PRICE</b> — a genuinely good price, but not a record. <b>ROUTINE DEAL</b> — a small or familiar cut; buy it only if you need it now.</li>
+      <li>Every card shows the sale price, the usual price, the discount, the store, when the price was checked and the source that showed it.</li>
+      <li>Discounts are worked out from the two prices on the card — if they do not add up, the deal does not belong here.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p id="checked-line"></p>
+    <p>Plunge is an independent deal finder built for Black Friday 2026. Store names belong to their owners; prices are the stores’ own, read on 27 November 2026.</p>
+  </div>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
